@@ -5,6 +5,8 @@ export class HelloWorldModel extends Observable {
     private _message: string;
     public webViewSrc = 'https://www.naver.com';
     public result = 'result';
+    public tftext = 'https://www.naver.com'
+    public enabled = true;
 
     constructor() {
         super();
