@@ -1,0 +1,5 @@
+{
+    "circleci": {
+        "httpsRepositoryURL": "https://github.com/cybaj/test_webview_extend.git"
+    }
+}
