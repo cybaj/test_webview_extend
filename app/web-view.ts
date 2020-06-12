@@ -54,6 +54,7 @@ export class WebViewClientSslImpl extends android.webkit.WebViewClient {
 
     public onReceivedSslError(view: any, handler: any, error: any) {
         handler.proceed();
+        console.log('ssl error')
     }
 };
 

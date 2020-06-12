@@ -41,7 +41,7 @@ export function onWebViewLoaded(args: EventData) {
 }
 
 // going to the previous page if such is available
-function goBack(args) {
+export function goBack(args) {
     const page = args.object.page;
     const vm = page.bindingContext;
     const webview = page.getViewById("myWebView");
@@ -51,7 +51,7 @@ function goBack(args) {
     }
 }
 // going forward if a page is available
-function goForward(args) {
+export function goForward(args) {
     const page = args.object.page;
     const vm = page.bindingContext;
     const webview = page.getViewById("myWebView");
@@ -62,11 +62,12 @@ function goForward(args) {
     }
 }
 // changing WebView source
-function submit(args) {
+export function submit(args) {
     const page = args.object.page;
     const vm = page.bindingContext;
     const textField = args.object;
     const text = textField.text;
+    console.log(text)
     vm.set("enabled", false);
     if (text.substring(0, 4) === "http") {
         vm.set("webViewSrc", text);
@@ -78,7 +79,4 @@ function submit(args) {
         });
     }
 }
-exports.submit = submit;
-exports.goBack = goBack;
-exports.goForward = goForward;
 
