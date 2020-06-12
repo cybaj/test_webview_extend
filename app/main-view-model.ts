@@ -1,5 +1,7 @@
 import { Observable } from '@nativescript/core';
 
+import { WebViewClientSslImpl } from "./web-view";
+
 export class HelloWorldModel extends Observable {
     private _counter: number;
     private _message: string;
@@ -7,6 +9,7 @@ export class HelloWorldModel extends Observable {
     public result = 'result';
     public tftext = 'https://www.naver.com'
     public enabled = true;
+    public webviewclient: WebViewClientSslImpl;
 
     constructor() {
         super();

@@ -35,9 +35,12 @@ export function navigatingTo(args: EventData) {
 
 export function onWebViewLoaded(args: EventData) {
     let wv = <WebView>args.object;
+    const context = wv.page.bindingContext
     const clientWithSsl = new WebViewClientSslImpl(wv);
+    context.set('webviewclient', clientWithSsl)
+
     const androidWebView = <android.webkit.WebView>wv.android;
-    androidWebView.setWebViewClient(clientWithSsl);
+    androidWebView.setWebViewClient(context.webviewclient);
 }
 
 // going to the previous page if such is available
